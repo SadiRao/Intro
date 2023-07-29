@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %} "{{url_for('static', filename ='about.css')}}" {% endblock %}
+{% block navbar %}
+<li class="nav-item item-active1"><a href="/" class="nav-link">Home</a></li>
+<li class="nav-item item-active2"><a href="/about" class="nav-link" disabled>About</a></li>
+<li class="nav-item item-active3"><a href="/contact" class="nav-link">Contact Me</a></li>
+{% endblock %}
+{% block content %}
+<div class = 'para d-flex flex-wrap text-align-center mx-md-auto'>
+    <div id = 'abc' style = 'display:none'>
+      <h1 style = 'text-align: center'>Web Developer</h1>
+      <p >I am a self-learner full-stack web developer. I have learnt web development via online courses from Harvard University and Michigan Univeristy. I am expert at HTML5, CSS3 and pretty good at javascript. In Front-end development, 
+      I use Bootstrap to make responsive designs. For Backend development, I use Python's very famous framework Flask. I use this framework for making routes, sessions, connections with database etc. I like doing work with responsibility and 
+      make sure my slient is happy. Thank u for reading!</p>
+    </div>
+    <div id = 'def' style = 'display:none'>
+      <h1 style = 'text-align: center'>Web Designer</h1>
+      <p style = ''>I have learnt web designing online and via books. I used to design websites mainly via Figma. I use Bootstrap for making websites responsive to minimize my work.
+      But I like to design websites on Figma which is an awesome tool that provides HTML and CSS of the wesbite templates. I always try my best to satisfy my clients with my designing skills.
+      </p>
+    </div>
+    <div id = 'ghi' style = 'display:none'>
+      <h1 style = 'text-align: center'>Logo Designer</h1>
+      <p style = ''>I am using Figma for more than a year. It am pretty good at making website templates and logo designs using Figma. I used to make 
+        logo desgins especially for websites. Because Figma provide different file forms like pdf, svg, png etc., so it becomes easy to export file in any form. I try to create my own designs that are unique. Hope you will like my work. Thank u!
+      </p>
+    </div>
+  </div>
+    <div class = ''>
+    <ul class = 'btn-group' style = 'list-style: none'>
+    <li><button class="btn btn-lg" id = '1'>1</button></li>
+    <li><button class="btn btn-lg" id = '2'>2</button></li>
+    <li><button class="btn btn-lg" id = '3'>3</button></li>
+  </ul>
+</div>
+<script>
+  var button1 = document.getElementById('1');
+  var text1 = document.getElementById('abc');
+  var button3 = document.getElementById('3');
+  var text3 = document.getElementById('ghi');
+  var button2 = document.getElementById('2');
+  var text2 = document.getElementById('def');
+  document.addEventListener("DOMContentLoaded", function(){
+      text1.style.display = 'block';
+      text2.style.display = 'none';
+      text3.style.display = 'none';
+      button1.disabled = true;
+  })
+  button1.addEventListener("click", function(){
+    if (text1.style.display == 'none'){
+      text1.style.display = 'block';
+      text2.style.display = 'none';
+      text3.style.display = 'none';
+      button1.disabled = true;
+      button2.disabled = false;
+      button3.disabled = false;
+    }
+    else{text1.style.display = 'none'}
+  })
+  button2.addEventListener("click", function(){
+    if (text2.style.display == 'none'){
+      text2.style.display = 'block';
+      text1.style.display = 'none';
+      text3.style.display = 'none';
+      button2.disabled = true;
+      button1.disabled = false;
+      button3.disabled = false;
+    }
+    else{text2.style.display = 'none'}
+  })
+  button3.addEventListener("click", function(){
+    if (text3.style.display == 'none'){
+      text3.style.display = 'block';
+      text2.style.display = 'none';
+      text1.style.display = 'none';
+      button3.disabled = true;
+      button1.disabled = false;
+      button2.disabled = false;
+    }
+    else{text3.style.display = 'none'}
+  })
+  
+</script>  
+{% endblock %}

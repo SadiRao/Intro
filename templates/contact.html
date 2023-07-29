@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %} "{{url_for('static', filename ='contact.css')}}" {% endblock %}
+{% block navbar %}
+<li class="nav-item item-active1"><a href="/" class="nav-link">Home</a></li>
+<li class="nav-item item-active2"><a href="/about" class="nav-link">About</a></li>
+<li class="nav-item item-active3"><a href="/contact" class="nav-link" disabled>Contact Me</a></li>
+{% endblock %}
+{% block content %}
+<div class = 'text-center'>
+    <form class="form-signin" action = '/submit' method = 'POST'>
+        <img class="mb-4" src="{{url_for('static', filename ='web.png')}}" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Contact Me</h1>
+        <label for="inputEmail" class="sr-only my-1" pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">Email address</label>
+        <input type="email" id="inputEmail" name = 'email' class="form-control" placeholder="Email address" required autofocus>
+        <label for="text" class="sr-only my-1">How can I serve you?</label>
+        <textarea type="text" id="message" name = 'msg' class="form-control" maxlength = '500' placeholder="" required></textarea>
+        <button class="btn btn-lg btn-block my-3" type="submit">Submit</button>
+    </form>
+</div>
+<script>
+    const msg = document.getElementById('message');
+    msg.addEventListener('input', () =>{
+        msg.style.lineHeight = '${msg.scrollHeight}px';
+    })
+</script>
+{% endblock %}

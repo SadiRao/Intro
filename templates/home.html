@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %} "{{url_for('static', filename ='home.css')}}" {% endblock %}
+{% block navbar %}
+<li class="nav-item item-active1"><a href="/" class="nav-link" disabled>Home</a></li>
+<li class="nav-item item-active2"><a href="/about" class="nav-link">About</a></li>
+<li class="nav-item item-active3"><a href="/contact" class="nav-link">Contact Me</a></li>
+{% endblock %}
+{% block content %}
+<img class="fs-4" src = "{{url_for('static', filename = 'web.png')}}" style = width: 70px, height= 70px>
+<h1>Websites done here!</h1>
+<p class="lead text-wrap py-3">I am a Full-Stack Web Devloper. I used to make simple logos by using Figma and websites by using Bootstrap and Flask mainly. If you are looking for web appearance, you can contact me here!</p>
+<p class="lead py-3">
+    <a href="/contact" class="btn btn-lg btn-light fw-bold border-white bg-white">Contact Me via Email -></a>
+    <a href="https://www.upwork.com/freelancers/~0102a14eb477afc2aa" class="btn btn-lg btn-light fw-bold border-white bg-white">Hire Me At Upwork -></a>
+</p>
+{% endblock %}
